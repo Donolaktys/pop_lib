@@ -7,8 +7,6 @@ import ru.donolaktys.pop_lib.mvp.presenter.UserPresenter
 import ru.donolaktys.pop_lib.mvp.presenter.UsersPresenter
 import ru.donolaktys.pop_lib.ui.activity.MainActivity
 import ru.donolaktys.pop_lib.ui.adapter.UsersRvAdapter
-import ru.donolaktys.pop_lib.ui.fragment.UserFragment
-import ru.donolaktys.pop_lib.ui.fragment.UsersFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -26,4 +24,6 @@ interface AppComponent {
     fun inject(usersPresenter: UsersPresenter)
     fun inject(userPresenter: UserPresenter)
     fun inject(mainPresenter: MainPresenter)
+    fun inject(usersRvAdapter: UsersRvAdapter)
+    fun inject(mainActivity: MainActivity)
 }
