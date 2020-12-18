@@ -11,11 +11,16 @@ import ru.donolaktys.pop_lib.R
 import ru.donolaktys.pop_lib.mvp.model.image.IImageLoader
 import ru.donolaktys.pop_lib.mvp.presenter.list.IUsersListPresenter
 import ru.donolaktys.pop_lib.mvp.view.list.IUserItemView
+import ru.donolaktys.pop_lib.ui.App
 import javax.inject.Inject
 
 class UsersRvAdapter(val presenter: IUsersListPresenter): RecyclerView.Adapter<UsersRvAdapter.ViewHolder>() {
 
     @Inject lateinit var imageLoader: IImageLoader<ImageView>
+
+    init {
+        App.component.inject(this)
+    }
 
     inner class ViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), IUserItemView, LayoutContainer {
         override var pos: Int = -1
